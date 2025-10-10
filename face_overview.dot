@@ -1,0 +1,382 @@
+digraph G {
+  graph [rankdir=LR,compound=true];
+  //graph [compound=true];
+  node [shape=box, style="rounded,filled"];
+  FACE_Enterprise[label="FACE Enterprise"];
+FACE_stakeholders[label="stakeholders\n利益相关方"];
+Army[label="Army\n陆军"];
+Navy[label="Navy\n海军"];
+Air_Force[label="Air Force\n空军"];
+Industry[label="Industry\n工业界"];
+Government[label="Government\n政府"];
+Funded_Academia_Participants[label="Funded Academia Participants\n被资助的学术参与者"];
+FACE_Enterprise->FACE_stakeholders[label="comprised of\n组成"];
+Participant_Stakeholders[label="Participant Stakeholders\n参与方利益相关者"];
+Consortium_Entity_Stakeholders[label="Consortium Entity Stakeholders\n联盟实体利益相关者"]
+Non_Consortium_Stakeholders[label="Non-Consortium Stakeholders\n非联盟利益相关者"]
+subgraph FACE_Enterprise_Stakeholders_subgraph{
+ rank=same;
+Non_Consortium_Stakeholders
+Participant_Stakeholders
+Consortium_Entity_Stakeholders
+}
+FACE_stakeholders->Participant_Stakeholders[label="include\n包括"]
+FACE_stakeholders->Consortium_Entity_Stakeholders[label="include\n包括"]
+FACE_stakeholders->Non_Consortium_Stakeholders[label="include\n包括"]
+//Participant_Stakeholders
+The_Open_Group[label="The Open Group"];
+Participant_Stakeholders->The_Open_Group[label="include\n包括"]
+Participant_Stakeholders->FACE_Consortium[label="include\n包括"]
+Participant_Stakeholders->Industry[label="include\n包括"]
+Participant_Stakeholders->Government[label="include\n包括"]
+Participant_Stakeholders->Funded_Academia_Participants[label="include\n包括"]
+
+//Consortium Entity Stakeholders
+FACE_Steering_Committee[label="FACE Steering Committee\nFACE指导(执行)委员会"]
+FACE_Advisory_Board[label="FACE Advisory Board\nFACE咨询委员会"]
+FACE_VA[label="Verification Authorities(VA)\n验证机构"]
+FACE_CA[label="Certification Authority(CA)\n认证机构"]
+FACE_LA[label="Library Administrator(LA)\n库管理员"]
+subgraph Consortium_Entity_Stakeholders_subgraph{
+FACE_Steering_Committee
+FACE_Advisory_Board
+FACE_VA
+FACE_CA
+FACE_LA
+{rank=same;FACE_Steering_Committee;FACE_Advisory_Board;FACE_VA;FACE_CA;FACE_LA}
+}
+FACE_Steering_Committee->FACE_VA[label="select and approve\n选定和批准"]
+FACE_Steering_Committee->FACE_CA[label="select and approve\n选定和批准"]
+FACE_Steering_Committee->FACE_LA[label="select and approve\n选定和批准"]
+
+
+subgraph cluster_workinggroup{
+style=dashed;
+label="FACE Consortium Working Groups";
+FACE_Business_WorkingGroup[label="Business Working Group(BWG)\n商业工作组"]
+FACE_Technical_WorkingGroup[label="Technical Working Group(TWG)\n技术工作组"]
+FACE_Domain_Interoperability_WorkingGroup[label="Domain Interoperability Working Group(DIOG)\n领域互操作性工作组"]
+}
+subgraph cluster_subcommittees{
+style=dashed;
+label="FACE Consortium subcommittees";
+subgraph cluster_BWG_subcommittess{
+style=dashed;
+label="";
+BSS[label="Business Strategy Subcommittee\n业务战略分委会"]
+Business_Operations_Subcommittee[label="Business Operations Subcommittee\n业务运营分委会"]
+Outreach_Subcommittee[label="Business Operations Subcommittee\n业务运营分委会"]
+}
+subgraph cluster_TWG_subcommittess{
+style=dashed;
+label="";
+Conformance_Verification_Matrix_Subcommittee[label="Business Operations Subcommittee\n一致性验证矩阵分委会"]
+General_Enhancements_Sub[label="General Enhancements Subcommittee\n通用增强分委会"]
+Graphics_Sub[label="Graphics Subcommittee\n图形分委会"]
+OS_Sub[label="Operating Systems Subcommittee\n操作系统分委会"]
+Security_Sub[label="Security Subcommittee\n安全分委会"]
+Software_Safety_Sub[label="Software Safety Subcommittee\n软件安全分委会"]
+Standard_Sub[label="Standard Subcommittee\n标准分委会"]
+Transport_Services_Sub[label="Transport Services Subcommittee(TSS)\n传输服务分委会"]
+}
+subgraph cluster_DIOG_subcommittess{
+style=dashed;
+label="";
+Data_Architecture_Guidance_Subcommittee[label="Data Architecture Guidance Subcommittee\n数据架构指导分委会"]
+Data_Architecture_Language_Subcommittee[label="Data Architecture Language Subcommittee\n数据架构语言分委会"]
+Shared_Data_Model_Subcommittee[label="Shared Data Model Subcommittee\n共享数据模型分委会"]
+}
+EA_Air_Worthiness_Subcommittee[label="EA Air Worthiness Subcommittee\nEA适航分委会"]
+}
+Consortium_Entity_Stakeholders->FACE_Steering_Committee[label="include\n包括"]
+Consortium_Entity_Stakeholders->FACE_Advisory_Board[label="include\n包括"]
+Consortium_Entity_Stakeholders->FACE_VA[label="include\n包括"]
+Consortium_Entity_Stakeholders->FACE_CA[label="include\n包括"]
+Consortium_Entity_Stakeholders->FACE_LA[label="include\n包括"]
+Consortium_Entity_Stakeholders->FACE_Domain_Interoperability_WorkingGroup[lhead="cluster_workinggroup",label="include\n包括"]
+//FACE_Steering_Committee
+subgraph cluster_FACE_Steering_Committee_role{
+style=dashed;
+label="FACE Steering Committee role{\n指导委员会的作用";
+cluster_FACE_Steering_Committee_role0[label="directs all activities of the FACE Consortium\n指导FACE的所有活动"]
+cluster_FACE_Steering_Committee_role1[label="Approval to submit all Consortium work products to The Open Group for review, final approval, and publication\n批准将所有联盟工作成果提交开放群组审核、最终批准和发布"]
+cluster_FACE_Steering_Committee_role2[label="Creating new working groups and approving their charters\n成立新的工作组并批准其章程"];
+cluster_FACE_Steering_Committee_role3[label="Defining and approving roles and responsibilities of the FACE Advisory Board\n定义并批准FACE咨询委员会的角色和职责"];
+cluster_FACE_Steering_Committee_role4[label="Oversight of the FACE Consortium’s alignment with other standards organizations\n监督FACE联盟与其他标准组织的一致性"];
+cluster_FACE_Steering_Committee_role0->cluster_FACE_Steering_Committee_role1[label="include\n包括"]
+cluster_FACE_Steering_Committee_role0->cluster_FACE_Steering_Committee_role2[label="include\n包括"]
+cluster_FACE_Steering_Committee_role0->cluster_FACE_Steering_Committee_role3[label="include\n包括"]
+cluster_FACE_Steering_Committee_role0->cluster_FACE_Steering_Committee_role4[label="include\n包括"]
+}
+FACE_Steering_Committee->cluster_FACE_Steering_Committee_role0[label="roles\n作用",lhead="cluster_FACE_Steering_Committee_role"]
+FACE_Steering_Committee->FACE_Advisory_Board[label="Defining and approving roles and responsibilities\n定义并批准其角色和职责",weight=10];
+
+
+//FACE_Advisory_Board
+subgraph cluster_FACE_Advisory_board_role{
+style=dashed;
+label="FACE Advisory Board role\nFACE咨询委员会的作用";
+FACE_Advisory_board_role1[label="provides guidance and advice to the FACE Consortium from the perspective of high-ranking Government and Industry officials\n"];
+}
+FACE_Advisory_Board->FACE_Advisory_board_role1[label="roles\n作用",lhead="cluster_FACE_Advisory_board_role"]
+
+//FACE_VA_CA_LA
+FACE_VA_role[label=" verify products submitted are conformant to requirements of the FACE Technical Standard\n验证提交的产品是否符合FACE技术标准的要求"]
+FACE_CA_role[label="provides the FACE Conformance Certificate for the product\n为产品提供FACE合规证书(在产品达到合规性要求之后)"]
+FACE_LA_role[label="place the product description (metadata) in the FACE Registry of conformant products\n将产品描述(元数据)录入FACE合规产品注册库"]
+FACE_VA->FACE_VA_role[label="role\n作用"]
+FACE_CA->FACE_CA_role[label="role\n作用"]
+FACE_LA->FACE_LA_role[label="role\n作用"]
+
+//Non ConsortiumStakeholders
+Non_Consortium_Stakeholders1[label="Members of other Forums under The Open Group\n开放集团旗下其他论坛的成员"]
+Non_Consortium_Stakeholders2[label="Other Standards Bodies with no Affiliation to The Open Group\n与开放集团无关联的其他标准机构"]
+Non_Consortium_Stakeholders3[label="Users of FACE Work Products with no Affiliation to The Open Group\n与开放集团无关联的FACE工作产品用户"]
+Non_Consortium_Stakeholders->Non_Consortium_Stakeholders1[label="include\n包括"]
+Non_Consortium_Stakeholders->Non_Consortium_Stakeholders2[label="include\n包括"]
+Non_Consortium_Stakeholders->Non_Consortium_Stakeholders3[label="include\n包括"]
+
+//Working Groups
+//BusinessWoring Group
+FACE_Business_WorkingGroup->BSS[label="include\n包括",lhead="cluster_BWG_subcommittess"]
+//Technical Working Group
+FACE_Technical_WorkingGroup->Conformance_Verification_Matrix_Subcommittee[label="include\n包括",lhead="cluster_TWG_subcommittess"]
+//FACE_Domain_Interoperability_WorkingGroup
+FACE_Domain_Interoperability_WorkingGroup->Data_Architecture_Guidance_Subcommittee[label="include\n包括",lhead="cluster_DIOG_subcommittess"]
+
+//FACE_Standing_Committees
+subgraph cluster_standing_committees{
+style=dashed;
+label="FACE Standing committees";
+EA_Standing_Committee[label="Enterprise Architecture (EA) Standing Committee\nEnterprise架构常务委员会"]
+Integration_Workshop_Standing_Committee[label="Integration Workshop (IWS) Standing Committee\n集成研讨会常务委员会"]
+Standards_Alignment_Standing_Committee[label="Standards Alignment Standing Committee\n标准协调常务委员会"]
+Course_Accreditation_Standing_Committee[label="Course Accreditation Standing Committee\n课程认证常务委员会"]
+}
+Consortium_Entity_Stakeholders->EA_Standing_Committee[lhead="cluster_standing_committees",label="include\n包括"]
+EA_Standing_Committee->EA_Air_Worthiness_Subcommittee[label="include\n包括"]
+
+//WorkProducts and Processes
+subgraph cluster_work_products_and_Processes{
+style=dashed;
+label="Work Products and Processes\n工作成果和流程";
+//Technical_Standard
+FACE_Technical_Standard_[label="FACE Technical Standard\nFACE 技术标准"]
+subgraph cluster_FACE_reference_Architecture{
+style=dashed;
+label="FACE Reference Architecture \nFACE 参考架构";
+subgraph cluster_FACE_architectural_segments{
+style=dashed;
+label="FACE Reference Architecture logical segments\nFACE 参考架构逻辑段";
+Operating_System_Segment[label="Operating System Segment\n操作系统段"]
+InputOutput_Services_Segment[label="Input/Output Services Segment\n输入输出服务段"]
+Platform_Specific_Services_Segment[label="Platform-Specific Services Segment\n平台特定服务段"]
+Transport_Services_Segment[label="Transport Services Segment\n传输服务段"]
+Portable_Components_Segment[label="Portable Components Segment\n可移植组件段"]
+}
+subgraph cluster_FACE_key_interfaces{
+style=dashed;
+label="FACE interfaces\nFACE 接口";
+Operating_System_Interface[label="Operating System Segment Interface\n操作系统段接口"]
+IO_Services_Interface[label="I/O Services Interface\nI/O服务接口"]
+Transport_Services_Interface[label="Transport Services Interface\n传输服务接口"]
+}
+}
+FACE_Technical_Standard_->Portable_Components_Segment[lhead="cluster_FACE_reference_Architecture",label="include\n包括"]
+//FACE Conformance Program
+FACE_Conformance_Program[label="FACE Conformance Program\nFACE 合规程序"]
+subgraph cluster_Conformance_Program_consists{
+style=dashed;
+label="";
+Verification[label="1.Verification\n验证"]
+Certification[label="2.Certification\n认证"]
+Registration[label="3.Registration\n注册"]
+}
+Verification_fee[label="Verification Fee\n验证费用"]
+Certification_fee[label="Certification Fee\n认证费用"]
+Verification->Verification_fee[label="separate fee\n独立费用"]
+Certification->Certification_fee[label="separate fee\n独立费用"]
+subgraph cluster_Conformance_Program_participate{
+label="";
+style=dashed;
+Software_Supplier[label="Software Supplier\n软件供应商"]
+Verification_Authority[label="Verification Authority(VA)\n验证机构"]
+Certification_Authority[label="Certification Authority(CA)\n认证机构"]
+Library_Administrator[label="Library Administrator(LA)\n库管理员"]
+}
+FACE_Conformance_Program->Verification[lhead ="cluster_Conformance_Program_consists" ,label="consists of\n由什么组成"]
+FACE_Conformance_Program->Verification_Authority[lhead="cluster_Conformance_Program_participate",label="organizational entities that participate\n参与的组织实体"]
+
+//FACE Library
+FACE_Library[label="FACE Library\nFACE 库"]
+subgraph cluster_FACE_Library_components{
+label="";
+style=dashed;
+Main_FACE_Landing_Page[label="Main FACE Landing Page\n主FACE登录页面"]
+FACE_Conformance_Workflow_Tool[label="FACE Conformance Workflow Tool\nFACE合规工作流工具"]
+FACE_Registry[label="FACE Registry\nFACE注册表"]
+FACE_Reference_Repository[label="FACE Reference Repository\nFACE参考库"]
+FACE_Product_Repositories[label="FACE Product Repositories\nFACE产品库"]
+FACE_Certification_Retention_Repository[label="FACE Certification Retention Repository\nFACE认证保留库"]
+FACE_Verification_Retention_Repositories[label="FACE Verification Retention Repositories\nFACE验证保留库"]
+}
+FACE_Library->FACE_Registry[label="components\n组件",lhead="cluster_FACE_Library_components"]
+
+subgraph cluster_TWG_Work_Product{
+label="TWG Work Products\n技术工作组工作成果";
+style=dashed;
+FACE_Technical_Standard_
+Reference_Implementation_Guide[label="Reference Implementation Guide\n参考实现指南"]
+Conformance_Verification_Matrix[label="Conformance Verification Matrix\n一致性验证矩阵"]
+Conformance_Matrix_Users_Guide[label="Conformance Matrix User’s Guide\n一致性矩阵用户指南"]
+Conformance_Test_Suite[label="Conformance Test Suite\n一致性测试套件"]
+}
+
+subgraph cluster_DIOG_Work_Product{
+label="DIOG_Work Products\n技术工作组工作成果";
+style=dashed;
+Shared_Data_Model[label="Shared Data Model\n共享数据模型"]
+FACE_Shared_Data_Model_Governance_Plan[label="FACE Shared Data Model Governance Plan\nFACE共享数据模型治理计划"]
+Open_UDDL_Standard[label="Open Universal Domain Description Language (Open UDDL) Standard\n开放通用领域描述语言标准"]
+}
+subgraph cluster_BWG_Work_Product{
+label="BWG_Work Products\n商业工作组工作成果";
+style=dashed;
+FACE_Business_Guide[label="FACE Business Guide\nFACE业务指南"]
+FACE_Contract_Guide[label="FACE Contract Guide\nFACE合同指南"]
+FACE_Conformance_Policy[label="FACE Conformance Policy\nFACE合规政策"]
+FACE_Conformance_Certification_Guide[label="FACE Conformance Certification Guide\nFACE合规认证指南"]
+Conformance_Workflow_Tool_and_FACE_Registry[label="Conformance Workflow Tool and FACE Registry\n一致性工作流工具和FACE Registry"]
+Overview_General_Information_and_Promotional_Materials[label="Overview, General Information, and Promotional Materials\n概述、一般信息和宣传资料"]
+}
+
+subgraph cluster_EA_Work_Product{
+label="EA Work Products\nEnterprise架构常务委员会工作成果";
+style=dashed;
+AV2_FACE_Glossary_of_Terms_and_Definitions[label="AV-2 FACE Glossary of Terms and Definitions\nAV-2 FACE术语和定义词汇表"]
+FACE_Overview_Document[label="FACE Overview Document\nFACE概述文档"]
+FACE_Enterprise_Architecture_Artifacts[label="FACE Enterprise Architecture Artifacts\nFACE Enterprise(企业) 架构工件"]
+Problem_Report_Change_Request_Process[label="Problem Report/Change Request Process\n问题报告/变更请求流程"]
+}
+subgraph cluster_Integration_Workshop_Standing_Committee_Work_Product{
+label="Integration Workshop Standing Committee Work Products\n集成研讨会常务委员会工作成果";
+style=dashed;
+Software_Supplier_Getting_Started_Guide[label="Software Supplier Getting Started Guide\n软件供应商入门指南"]
+Basic_Avionics_Lightweight_Source_Archetype[label="Basic Avionics Lightweight Source Archetype\n基本航空电子轻型远原型"]
+FACE_TwoPart_Webinar_Series[label="FACE Two-Part Webinar Series\nFACE两部分网络研讨会系列"]
+}
+subgraph cluster_Academia_Work_Product{
+label="Academic Work Products\n学术界工作成果";
+style=dashed;
+Software_Development_Tools[label="Software Development Tools\n软件开发工具"]
+Modeling_Tools_for_FACE_Software_Development[label="Modeling Tools for FACE Software Development\n软件开发建模工具"]
+COTS_Tool_Support_Modeling_Tool_Interchange[label="COTS Tool Support/Modeling Tool Interchange\n商用现货工具支持/建模工具Interchange"]
+}
+
+}
+//FACE_Technical_WorkingGroup->FACE_Technical_Standard_[lhead="cluster_work_products_and_Processes",ltail="cluster_workinggroup"]
+//FACE_Domain_Interoperability_WorkingGroup->FACE_Technical_Standard_[ltail="cluster_workinggroup",lhead="cluster_work_products_and_Processes",label="develop\n开发"]
+BSS->FACE_Technical_Standard_[ltail="cluster_subcommittees",lhead="cluster_work_products_and_Processes",label="(working group and subcommittees)develop\n工作组和分委会开发"]
+
+
+The_Open_Group_info[label="The Open Group is a global consortium that enables the achievement of business objectives through technology standards\n更多信息www.opengroup.org"];
+The_Open_Group->The_Open_Group_info[label="粗略信息"];
+FACE_Enterprise_goal  [label = "proposing, developing, and implementing FACE conformant software\nonto Department of Defense (DoD) aircraft and other environments.\n美国国防部（DoD）的航空器及其他环境中提议、开发并部署符合 FACE 标准的软件"];
+FACE_Enterprise->FACE_Enterprise_goal[label="goal\n目标"];
+FACE_Technical_Standard[label="FACE Technical Standard\nFACE技术标准"];
+FACE_Conformance_Process[label="FACE Conformance Process\nFACE合规流程"];
+FACE_Enterprise->FACE_Technical_Standard[label="basis\n基础"]
+FACE_Enterprise->FACE_Conformance_Process[label="basis\n基础"]
+FACE_Conformance_Process->FACE_Technical_Standard[label="确保开发的软件符合"]
+subgraph FACE_Enterprise_basis{
+ rank=same;
+FACE_Technical_Standard;
+FACE_Conformance_Process;
+}
+
+//FACE_Consortium
+FACE_Consortium[label="(The Open Group)FACE Consortium\nFACE 联盟"];
+FACE_Consortium->Consortium_Entity_Stakeholders[style=dashed];
+FACE_Consortium_form_time[label="June 2010"];
+FACE_Consortium_nature[label="Voluntary Consensus Standards Body under Open Group\nOpen Group旗下的自愿共识标准机构"];
+FACE_Consortium->FACE_Consortium_form_time[label="form time\n成立时间"];
+FACE_Consortium->FACE_Consortium_nature[label="属性"];
+FACE_Enterprise->FACE_Consortium[label="representative organizations join\n代表性组织以成员加入"];
+FACE_Consortium_vision[label="an enduring FACE Enterprise\n一个持久的FACE Enterprise"];
+FACE_Consortium->FACE_Consortium_vision[label="vision\n愿景"];
+FACE_Consortium_vision1[label="portable\n可移植的"]
+FACE_Consortium_vision2[label="reusable\n可重用的"]
+FACE_Consortium_vision3[label="interoperable\n可互操作的"]
+FACE_Consortium_vision->FACE_Consortium_vision1[label="provide\n提供"]
+FACE_Consortium_vision->FACE_Consortium_vision2[label="provide\n提供"]
+FACE_Consortium_vision->FACE_Consortium_vision3[label="provide\n提供"]
+FACE_Consortium_vision1->software
+FACE_Consortium_vision2->software
+FACE_Consortium_vision3->software
+FACE_Consortium_vision4[label="faster delivery of capabilities\n更快的能力交付"]
+FACE_Consortium_vision5[label="lower implementation cost\n更低的实现成本"]
+FACE_Consortium_vision6[label="lower lifecycle costs\n更低的生命周期成本"]
+software->FACE_Consortium_vision4[label="result in\n导致"]
+software->FACE_Consortium_vision5[label="result in\n导致"]
+software->FACE_Consortium_vision6[label="result in\n导致"]
+FACE_Consortium_goal1[label="open software standard\n开放软件标准"];
+FACE_Consortium_goal2[label="supporting business strategy\n配套的商业战略"];
+FACE_Consortium->FACE_Consortium_goal1[label="goal(create and maintain)\n目标(建立和保持)"]
+FACE_Consortium->FACE_Consortium_goal2[label="goal(create and maintain)\n目标(建立和保持)"]
+FACE_Consortium_goal1->FACE_Consortium_vision[label="support\n支持"]
+FACE_Consortium_goal2->FACE_Consortium_vision[label="support\n支持"]
+subgraph cluster_a{
+style=dashed;
+label="FACE_Consortium_output";
+FACE_Consortium_output1[label="process\n流程"];
+FACE_Consortium_output2[label="procedures\n程序"];
+FACE_Consortium_output3[label="guidance documents\n指导文件"];
+FACE_Consortium_output4[label="technical standards\n技术标准"];
+}
+FACE_Consortium->FACE_Consortium_output2[lhead="cluster_a",label="output\n产出"]
+FACE_Consortium_output_usage[label="procure or produce FACE conformant products\n采购或生产符合FACE标准的产品"]
+FACE_Consortium_output2->FACE_Consortium_output_usage[ltail="cluster_a",label="used to"]
+
+FACE_Consortium_leadership_positions[label="key leadership positions/roles\n关键领导职务"]
+FACE_Consortium->FACE_Consortium_leadership_positions[label="'s\n的"]
+
+
+//Industry
+subgraph cluster_Industry_role{
+style=dashed;
+label="Industry role within the FACE Consortium\n工业界在联盟中的作用";
+Industry_role1[label="contribute technical expertise in development of FACE Technical Standard\n在FACE技术标准发展中贡献技术专长"]
+Industry_role2[label="contribute business expertise in development of business practices\n在商业实践发展中贡献商业专长"]
+Industry_role3[label=" develop needed capabilities that conform standards\n开发符合标准的必要能力"]
+Industry_role4[label="consume other FACE conformant software products\n使用符合FACE标准的软件产品"]
+Industry_role5[label="may also serve as FACE Conformance Verification Authorities\n也可以作为FACE合规性验证机构"]
+
+}
+Industry->Industry_role1[label="roles whithin FACE Consortium\n在FACE联盟中的作用",lhead="cluster_Industry_role"]
+Industry->FACE_Consortium_leadership_positions[label="(members)hold\n(成员)持有"];
+//Industry_contribution1[label="FACE busis"]
+//Government
+Government->Army[label="include\n包括"];
+Government->Navy[label="include\n包括"];
+Government->Air_Force[label="include\n包括"];
+Government->FACE_Consortium_leadership_positions[label="hold\n持有"];
+subgraph cluster_Government_role{
+style=dashed;
+label="Government role within the FACE Consortium\n政府在联盟中的作用";
+government_role1[label="the direction and funding of Academia activities\n指导和资助学术界活动"]
+government_role2[label="coordinating/leveraging existing DoD Open Architecture efforts\n协调和利用美国国防部现有的开放架构工作"]
+government_role4[label="aligning activities to ensure the continued interest and participation of the industrial base\n协调各项活动以确保工业界持续的兴趣和参与"]
+government_role3[label="may also serve as FACE Conformance Verification Authorities\n还可担任FACE合规验证机构"]
+}
+Government->government_role1[label="roles whithin FACE Consortium\n在FACE联盟中的作用",lhead="cluster_Government_role"]
+//Funded_Academia_Participants
+subgraph cluster_Academia_role{
+style=dashed;
+label="Funded Academia role within the FACE Consortium\n学术界在联盟中的作用";
+Academia_goal[label="provide prototyping, research, and validation support to the FACE Consortium\n为FACE联盟提供原型设计、研究和验证支持"]
+Academia_role1[label=" developing software prototypes that demonstrate the FACE computing environment.\n开发演示FACE计算环境的软件原型"]
+Academia_role2[label="developed conformance test suites and software development tools for each edition of the FACE Technical Standard\n为FACE技术标准的每个版本开发了一致性测试套件和软件开发工具"]
+}
+Funded_Academia_Participants->Academia_goal[label="goal\n目标"]
+Funded_Academia_Participants->Academia_role1[label="roles whithin FACE Consortium\n在FACE联盟中的作用",lhead="cluster_Academia_role"]
+}

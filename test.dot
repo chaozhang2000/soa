@@ -1,0 +1,113 @@
+digraph G {
+  graph [rankdir=LR,compound=true];
+  node [shape=box, style="rounded,filled"];
+
+	arch[label = "1.Architecture\n架构"];
+	openarch[label = "2.Open Architecture\n开放架构"];
+openstandard[label = "3.open standards\n开放标准"];
+opensystem[label = "4.open system\n开放系统"];
+OpenSystemArch[label = "5.open system architecture(OSA)\n开放系统架构"];
+MOSA[label = "6.Modular Open Systems Approach(MOSA)\n模块化开放系统方法"];
+   arch-> openarch[label = "include\n包括",color=red,style=dashed];
+   arch-> OpenSystemArch[label = "include\n包括",color=red,style=dashed];
+   opensystem->OpenSystemArch[label = "feature\n特征",color=red,style=dashed];
+
+components[label = "components\n组件们"color=white];
+structure[label = "structure\n结构"color=white];
+relationship[label = "relationship\n关系"color=white];
+archdef4[label = "design/evolution\n设计/演化"color=white];
+archdef5[label = "principles\n原则"color=white];
+archdef6[label = "guidelines\n指南"color=white]
+arch->components[label = "1.include\n包括"]
+components->archdef4[label = "1.'s\n的"];
+components->structure[label = "1.'s\n的"];
+components->relationship[label = "1.'s\n的"];
+archdef4->archdef5[label = "1.'s\n的"];
+archdef4->archdef6[label = "1.'s\n的"];
+
+tech_arch[label = "technical architecture\n技术架构"color=white];
+system_structure[label = "system structure\n系统结构"color=white];
+subgraph cluster_a{
+style = dashed;
+openarchdef4[label = "modular\n模块化"color=white];
+openarchdef5[label = "loosely coupled\n松耦合"color=white];
+openarchdef6[label = "highly cohesive\n强内聚"color=white];
+}
+openarchdef7[label = "publishing of key interface\n关键接口发布"color=white];
+openarchdef8[label = "full design disclosure\n完整的设计公开"color=white];
+openarch->tech_arch[label = "2.is\n是"];
+tech_arch->openstandard[label="2.4.adopts\n采用"];
+tech_arch->system_structure[label="2.4.support\n支持"];
+system_structure->openarchdef4[label="2.4.5.6.feature\n特征"];
+system_structure->openarchdef5[label="2.4.5.6.feature\n特征"];
+system_structure->openarchdef6[label="2.4.5.6.feature\n特征"];
+system_structure->openarchdef7[label="2.4.5.feature\n特征"];
+system_structure->openarchdef8[label="2.feature\n特征"];
+
+standards[label="standards\n标准",color=white];
+openstandarddef2[label="widely accepted and supported\n广泛接受和支持",color=white];
+openstandarddef3[label="standards organizations\n标准组织",color=white];
+openstandarddef4[label="marketplace\n市场",color=white];
+openstandarddef5[label="interoperability\n互操作性",color=white];
+openstandarddef6[label="portability\n可移植性",color=white];
+openstandarddef7[label="scalability\n可扩展性",color=white];
+openstandarddef8[label="recognized\n公认的",color=white];
+openstandarddef9[label="free or moderate license fee\n免费或适度许可费",color=white];
+openstandard->standards[label="3.is\n是"]
+standards->openstandarddef3[label="3.set by(or)\n被制定"]
+openstandarddef3->openstandarddef8[label="3.feature\n特征"]
+standards->openstandarddef4[label="3.set by(or)\n被制定"]
+standards->openstandarddef2[label="3.6.feature\n特征"]
+standards->openstandarddef5[label="3.support\n支持"]
+standards->openstandarddef6[label="3.support\n支持"]
+standards->openstandarddef7[label="3.support\n支持"]
+standards->openstandarddef9[label="3.feature\n特征"]
+consensus_based[label="consensus based\n基于共识的",color=white];
+standards->consensus_based[label="5.6.feature\n特征"]
+
+system[label = "system\n系统"color=white];
+opensystemdef1[label = "relevant design disclosure\n相关的设计公开"color=white];
+opensystem->system[label="4.is\n是"];
+system->tech_arch[label="4.5.has/use\n有/用"];
+system_structure->opensystemdef1[label="4.5.feture\n特征"];
+
+OpenSystemArch->system[label="5.a characteristic of\n是什么的特征"]
+tech_arch->standards[label="5.adopts\n采用"];
+
+MOSAdef1[label="an acquisition and design strategy\n一种采办和设计策略",color = white];
+system_interfaces[label="system interfaces\n系统接口",color = white];
+MOSA->MOSAdef1[label="6.is\n是"];
+MOSAdef1->tech_arch[label="6.consist of\n由什么组成"];
+tech_arch->system_interfaces[label="6.use\n使用"];
+system_interfaces->standards[label="6.compliant with\n符合\n(if standars is aviliable and suitable)"];
+MOSAdef1->system_structure[label="6.support\n支持"];
+MOSAdef2[label="allows severable system components at the appropriate level\n to be incrementally added, removed,\n or replaced throughout the life cycle of a system platform to \nafford opportunities for enhanced competition and innovation.",color=white];
+openarchdef6-> MOSAdef2[ltail="cluster_a",label="6."];
+}
+/*
+   arch-> openarch[label=<<table border="0" cellborder="0" cellspacing="2">
+        <tr><td><font color="#FFF000">舱内主照明控制信息</font></td></tr>
+        <tr><td bgcolor="#008000"><font color="black">RS422总线</font></td></tr>
+    </table>>, fontsize=10, color="#008000"];
+*/
+/*
+    #FF0000 (红色)
+    #00FF00 (绿色)
+    #0000FF (蓝色)
+    #FF00FF (洋红色)
+    #00FFFF (青色)//以太网
+    #800080 (紫色)//离散信号
+    #008000 (深绿色)//RS422
+    #FFC0CB (粉色) //模拟信号
+    #FFA500 (橙色) //燃油分系统
+    #FFF000 (黄色)//照明分系统
+    #A52A2A (棕色)
+    #000080 (海军蓝)
+    #32CD32 (浅绿色)
+    #8B0000 (深红色)
+    #87CEEB (天蓝色)
+    #DAA520 (深黄色)//HB6096
+    #808080 (灰色)//PWM
+    #FF69B4 (深粉色)
+    #DA70D6 (浅紫色)
+*/
