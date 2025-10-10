@@ -47,7 +47,7 @@ openarchdef7[label = "publishing of key interface\n关键接口发布"color=whit
 openarchdef8[label = "full design disclosure\n完整的设计公开"color=white];
 openarch->tech_arch[label = "2.is\n是"];
 tech_arch->openstandard[label="2.4.adopts\n采用"];
-tech_arch->system_structure[label="2.4.support\n支持"];
+tech_arch->system_structure[label="2.4.5.support\n支持"];
 system_structure->openarchdef4[label="2.4.5.6.feature\n特征"];
 system_structure->openarchdef5[label="2.4.5.6.feature\n特征"];
 system_structure->openarchdef6[label="2.4.5.6.feature\n特征"];
@@ -121,20 +121,102 @@ subgraph cluster_soft_open_arch_Current_Situation_Abroad{
 	Office_SEA->DSP[label="focus areas\n重点领域之一"]
 	Office_SEA->Systems_Engineering[label="focus areas\n重点领域之一"]
 	Systems_Engineering->MOSA_[label="include\n包括"]
+	subgraph cluster_Statutory_and_Regulatory{
+	label="立法与政策"
+	style=dashed
+	National_Defense_Authorization_Act_for_Fiscal_Year_2017[label="National Defense Authorization Act for Fiscal Year 2017(P.L. 114-328 2017)\n2017财政年度国防授权法案(公法 114-328 2017)",color=white]
 	_10USC4401[label="10 U.S.C 4401\n美国法典将要求扩大到所有国防采办项目(2021年)",color=white];
-	_10USC4401->MOSA_[label="法律要求"]
-	MOSWG[color=white,label="Modular Open Systems Working Group (MOSWG)\n模块化开放系统工作组"]
-	USDRE->MOSWG[label="lead\n领导(副部长办公室OUSD R&E成立)"]
+	Statutory_and_Regulatory_timeline[image="./images/statutory_and_regulatory_timeline.png"]
+	National_Defense_Authorization_Act_for_Fiscal_Year_2017->_10USC4401[label="主要变更：1.法条编号调整2446a->4401\n2.适用范围拓展,重大国防采办->其他国防采办也最大范围采用\n3.术语定义细化"]
+	DFARS[label="Defense Federal Acquisition Regulation (DFARS) MOSA Policy\n《国防联邦采办条例》（DFARS）模块化开放系统方法（MOSA）政策",color=white]
+	DFARS1[label="Part 207.106",color=white]
+	DFARS2[label="Part 227.7203-2",color=white]
+	DFARS->DFARS1
+	DFARS->DFARS2
+}
+	_10USC4401->MOSA_[label="法律与政策",ltail="cluster_Statutory_and_Regulatory"]
+	subgraph cluster_MOSAWGs{
+	label="相关机构"
+	style=dashed
+	MOSWG[color=white,label="Modular Open Systems Working Group (MOSWG)(now)\n模块化开放系统工作组(当前)"]
+	OSJTF[color=white,label="Open Systems Joint Task Force(OSJTF)(-2004)\n开放系统联合任务组(2004前)"]
+	TSWG[color=white,label="DoD MOSA Technical Standards Working Group (TSWG)\n国防部MOSA技术标准工作组(2016~?)"]
+	{rank=same;MOSWG;OSJTF;TSWG}
 subgraph cluster_tiger_team{
 	label=""
 	style = dashed;
 	Tiger1[color=white,label="Standards Tiger Team\n标准专项小组"]
 	Tiger2[color=white,label="Implementation Guidance Tiger Team\n实施指南专项小组"]
 	Tiger3[color=white,label="Requirements & Programming Functions Tiger Team\n需求与规划职能专项小组"]
+	Tiger4[color=white,label="MOSA Frameworks Tiger Team\nMOSA框架专项小组"]
 }
 	MOSWG->Tiger2[label="建立、领导",lhead="cluster_tiger_team"];
-	Tiger2->MOSA_[label="开展工作",ltail="cluster_tiger_team"];
-	MOSWG->MOSA_[label="开展工作"];
+	MOSWG->Tiger4[label="建立、领导(2018)"];
+	OSJTF->TSWG[style=dashed]
+	TSWG->MOSWG[style=dashed]
+	TSWG_role[color=white,label="1.明确了标准有效适当采用MOSA的作用和重要性\n2.查明国防部使用的常见标准，评估是否需要开发新标准\n3.与行业合作，挖掘行业侧实践，收集行业测痛点"]
+	TSWG->TSWG_role[label="工作"]
+	
+}
+
+	USDRE->MOSWG[label="lead\n领导(副部长办公室OUSD R&E成立)"]
+	MOSWG->MOSA_[label="开展工作",ltail="cluster_MOSAWGs"];
+	
+	FACE[label="(Navy)Future Airborne Capability Environment(FACE)"]
+	OMS[label="(Air Force)Open Mission Systems(OMS)"]
+	UCI[label="(Air Force)Universal Command and Control Interface(UCI)"]
+	VICTORY[label="(Army)Vehicle Integration for C4ISR/EW Interoperability(VICTORY)"]
+	MOSA_->FACE
+	MOSA_->OMS
+	MOSA_->UCI
+	MOSA_->VICTORY
+
+subgraph cluster_MOSA_ref_framework{
+	label="MOSA Reference Frameworks"
+	style = dashed;
+	MOSA_Ref_framework[label="MOSA Reference Frameworks in Defense Acquisition Programs\nMOSA国防采办项目中的参考框架"]
+}
+	MOSA_->MOSA_Ref_framework[label="参考架构(May 2020)"]
+subgraph cluster_MOSA_pillars{
+	label="MOSA Pillars\nMOSA的支柱"
+	style = dashed;
+	MOSA_Pillar1[label="Establish Enabling Environment\n建立有利环境"]
+	MOSA_Pillar5[label="Employ a Modular Design\n采用模块化设计"]
+	MOSA_Pillar2[label="Designate Modular Interfaces\n指定模块化接口"]
+	MOSA_Pillar3[label="Leverage Consensus-Based Open Standards\n利用基于共识的开放标准"]
+	MOSA_Pillar4[label="Certify Conformance\n认证合规性"]
+}
+	MOSA_->MOSA_Pillar1[label="pillar\n支柱",lhead="cluster_MOSA_pillars"]
+	MOSA_->MOSA[label="definition\n定义",style=dashed]
+subgraph cluster_MOSA_benefits{
+	label="MOSA Benefits\nMOSA优势\n来自Implementing a Modular Open Systems Approach in Department of Defense Programs(February 2025)"
+	style = dashed;
+	
+	subgraph cluster_MOSA_primary_benefits{
+	label="MOSA primary benefits\nMOSA核心优势"
+	style = dashed;
+	MOSA_Benefit1[label="Improves interoperability\n提升互操作性"]
+	MOSA_Benefit2[label="Enhances competition\n增强竞争"]
+	MOSA_Benefit3[label="Facilitates technology refresh\n促进技术更新"]
+	MOSA_Benefit4[label="Incorporates innovation\n吸收创新成果"]
+	MOSA_Benefit5[label="Enables cost savings/cost avoidance/schedule reduction\n实现成本节约/成本规避/进度缩短"]
+	}
+	subgraph cluster_MOSA_additional_benefits{
+	label="MOSA additional benefits\nMOSA额外收益"
+	style = dashed;
+	MOSA_Benefit6[label="plug-and-play capability\n即插即用能力"]
+	MOSA_Benefit7[label="interchangeability\n互换性"]
+	MOSA_Benefit8[label="Reusability\n可重用性"]
+	MOSA_Benefit9[label="Scalability\n可扩展性"]
+	MOSA_Benefit10[label="Vendor independence\n供应商独立性"]
+	MOSA_Benefit11[label="Flexibility and adaptability\n灵活性和适应性"]
+	MOSA_Benefit12[label="commonality\n通用性"]
+	MOSA_Benefit13[label="security and cyber resilience\n安全性和网络韧性"]
+	}
+}
+MOSA_ -> MOSA_Benefit1[label="benefit\n优势",lhead="cluster_MOSA_benefits"]
+	
 }
 soft_open_arch_what->USDRE[label="美国现状",lhead="cluster_soft_open_arch_Current_Situation_Abroad"]
+OSJTF->OpenSystemArch[label="define\n定义",style=dashed]
 }
