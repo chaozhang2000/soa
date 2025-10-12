@@ -22,12 +22,12 @@ MOSA[label = "6.Modular Open Systems Approach(MOSA)\n模块化开放系统方法
    arch-> OpenSystemArch[label = "include\n包括",color=red,style=dashed];
    opensystem->OpenSystemArch[label = "feature\n特征",color=red,style=dashed];
 
-components[label = "components\n组件们"color=white];
-structure[label = "structure\n结构"color=white];
-relationship[label = "relationship\n关系"color=white];
-archdef4[label = "design/evolution\n设计/演化"color=white];
-archdef5[label = "principles\n原则"color=white];
-archdef6[label = "guidelines\n指南"color=white]
+components[label = "components\n组件们"color=black,fillcolor=white];
+structure[label = "structure\n结构"color=black,fillcolor=white];
+relationship[label = "relationship\n关系"color=black,fillcolor=white];
+archdef4[label = "design/evolution\n设计/演化"color=black,fillcolor=white];
+archdef5[label = "principles\n原则"color=black,fillcolor=white];
+archdef6[label = "guidelines\n指南"color=black,fillcolor=white]
 arch->components[label = "1.include\n包括"]
 components->archdef4[label = "1.'s\n的"];
 components->structure[label = "1.'s\n的"];
@@ -35,16 +35,16 @@ components->relationship[label = "1.'s\n的"];
 archdef4->archdef5[label = "1.'s\n的"];
 archdef4->archdef6[label = "1.'s\n的"];
 
-tech_arch[label = "technical architecture\n技术架构"color=white];
-system_structure[label = "system structure\n系统结构"color=white];
+tech_arch[label = "technical architecture\n技术架构"color=black,fillcolor=white];
+system_structure[label = "system structure\n系统结构"color=black,fillcolor=white];
 subgraph cluster_a{
 style = dashed;
-openarchdef4[label = "modular\n模块化"color=white];
-openarchdef5[label = "loosely coupled\n松耦合"color=white];
-openarchdef6[label = "highly cohesive\n强内聚"color=white];
+openarchdef4[label = "modular\n模块化"color=black,fillcolor=white];
+openarchdef5[label = "loosely coupled\n松耦合"color=black,fillcolor=white];
+openarchdef6[label = "highly cohesive\n强内聚"color=black,fillcolor=white];
 }
-openarchdef7[label = "publishing of key interface\n关键接口发布"color=white];
-openarchdef8[label = "full design disclosure\n完整的设计公开"color=white];
+openarchdef7[label = "publishing of key interface\n关键接口发布"color=black,fillcolor=white];
+openarchdef8[label = "full design disclosure\n完整的设计公开"color=black,fillcolor=white];
 openarch->tech_arch[label = "2.is\n是"];
 tech_arch->openstandard[label="2.4.adopts\n采用"];
 tech_arch->system_structure[label="2.4.5.support\n支持"];
@@ -54,15 +54,15 @@ system_structure->openarchdef6[label="2.4.5.6.feature\n特征"];
 system_structure->openarchdef7[label="2.4.5.feature\n特征"];
 system_structure->openarchdef8[label="2.feature\n特征"];
 
-standards[label="standards\n标准",color=white];
-openstandarddef2[label="widely accepted and supported\n广泛接受和支持",color=white];
-openstandarddef3[label="standards organizations\n标准组织",color=white];
-openstandarddef4[label="marketplace\n市场",color=white];
-openstandarddef5[label="interoperability\n互操作性",color=white];
-openstandarddef6[label="portability\n可移植性",color=white];
-openstandarddef7[label="scalability\n可扩展性",color=white];
-openstandarddef8[label="recognized\n公认的",color=white];
-openstandarddef9[label="free or moderate license fee\n免费或适度许可费",color=white];
+standards[label="standards\n标准",color=black,fillcolor=white];
+openstandarddef2[label="widely accepted and supported\n广泛接受和支持",color=black,fillcolor=white];
+openstandarddef3[label="standards organizations\n标准组织",color=black,fillcolor=white];
+openstandarddef4[label="marketplace\n市场",color=black,fillcolor=white];
+openstandarddef5[label="interoperability\n互操作性",color=black,fillcolor=white];
+openstandarddef6[label="portability\n可移植性",color=black,fillcolor=white];
+openstandarddef7[label="scalability\n可扩展性",color=black,fillcolor=white];
+openstandarddef8[label="recognized\n公认的",color=black,fillcolor=white];
+openstandarddef9[label="free or moderate license fee\n免费或适度许可费",color=black,fillcolor=white];
 openstandard->standards[label="3.is\n是"]
 standards->openstandarddef3[label="3.set by(or)\n被制定"]
 openstandarddef3->openstandarddef8[label="3.feature\n特征"]
@@ -72,11 +72,11 @@ standards->openstandarddef5[label="3.support\n支持"]
 standards->openstandarddef6[label="3.support\n支持"]
 standards->openstandarddef7[label="3.support\n支持"]
 standards->openstandarddef9[label="3.feature\n特征"]
-consensus_based[label="consensus based\n基于共识的",color=white];
+consensus_based[label="consensus based\n基于共识的",color=black,fillcolor=white];
 standards->consensus_based[label="5.6.feature\n特征"]
 
-system[label = "system\n系统"color=white];
-opensystemdef1[label = "relevant design disclosure\n相关的设计公开"color=white];
+system[label = "system\n系统"color=black,fillcolor=white];
+opensystemdef1[label = "relevant design disclosure\n相关的设计公开"color=black,fillcolor=white];
 opensystem->system[label="4.is\n是"];
 system->tech_arch[label="4.5.has/use\n有/用"];
 system_structure->opensystemdef1[label="4.5.feture\n特征"];
@@ -91,19 +91,19 @@ MOSAdef1->tech_arch[label="6.consist of\n由什么组成"];
 tech_arch->system_interfaces[label="6.use\n使用"];
 system_interfaces->standards[label="6.compliant with\n符合\n(if standars is aviliable and suitable)"];
 MOSAdef1->system_structure[label="6.support\n支持"];
-MOSAdef2[label="allows severable system components at the appropriate level\n to be incrementally added, removed,\n or replaced throughout the life cycle of a system platform to \nafford opportunities for enhanced competition and innovation.",color=white];
+MOSAdef2[label="allows severable system components at the appropriate level\n to be incrementally added, removed,\n or replaced throughout the life cycle of a system platform to \nafford opportunities for enhanced competition and innovation.",color=black,fillcolor=white];
 openarchdef6-> MOSAdef2[ltail="cluster_a",label="6."];
 }
 soft_open_arch_what->arch[label="definitions\n相关定义",lhead="cluster_soft_open_arch_related_definitions"]
 subgraph cluster_soft_open_arch_Current_Situation_Abroad{
 	label="Current Situation in United States"
 	style = dashed;
-	USDRE[color=white,label="Under Secretary of Defense for Research and Engineering(USD R&E)\n负责研究和工程的国防部副部长"]
-	Office_SEA[color=white,label="Office of SE&A\n系统工程与架构办公室"]
-	Principal_Deputy_Director_for_Systems_Engineering_and_Architecture[color=white,label="Principal Deputy Director for Systems Engineering and Architecture\n系统工程与架构首席副主任"]
+	USDRE[color=black,fillcolor=white,label="Under Secretary of Defense for Research and Engineering(USD R&E)\n负责研究和工程的国防部副部长"]
+	Office_SEA[color=black,fillcolor=white,label="Office of SE&A\n系统工程与架构办公室"]
+	Principal_Deputy_Director_for_Systems_Engineering_and_Architecture[color=black,fillcolor=white,label="Principal Deputy Director for Systems Engineering and Architecture\n系统工程与架构首席副主任"]
 	DSP[label="Defense Standardization Program(DSP)\n国防标准化计划"]
-	Defense_Standardization_Executive[color=white,label="Defense Standardization Executive(DSE)\n国防标准化执行官"]
-	DSPO[color=white,label="The Defense Standardization Program Office(DSPO)\n国防标准化计划办公室"]
+	Defense_Standardization_Executive[color=black,fillcolor=white,label="Defense Standardization Executive(DSE)\n国防标准化执行官"]
+	DSPO[color=black,fillcolor=white,label="The Defense Standardization Program Office(DSPO)\n国防标准化计划办公室"]
 	{rank=same;Defense_Standardization_Executive;Principal_Deputy_Director_for_Systems_Engineering_and_Architecture;}
 	USDRE->Office_SEA[label="lead\n领导"]
 	Office_SEA->Principal_Deputy_Director_for_Systems_Engineering_and_Architecture
@@ -115,7 +115,7 @@ subgraph cluster_soft_open_arch_Current_Situation_Abroad{
 	DSPO->DSP[label="manage\n管理"]
 
 	MOSA_[label="Modular open systems approachi(MOSA)\n模块化系统方法"]
-	Systems_Engineering[color=white,label="Systems Engineering(EA)\n系统工程"]
+	Systems_Engineering[color=black,fillcolor=white,label="Systems Engineering(EA)\n系统工程"]
 	{rank=same;Systems_Engineering;DSP;}
 	DSP->MOSA_[label="support\n支持"]
 	Office_SEA->DSP[label="focus areas\n重点领域之一"]
@@ -124,52 +124,86 @@ subgraph cluster_soft_open_arch_Current_Situation_Abroad{
 	subgraph cluster_Statutory_and_Regulatory{
 	label="立法与政策"
 	style=dashed
-	National_Defense_Authorization_Act_for_Fiscal_Year_2017[label="National Defense Authorization Act for Fiscal Year 2017(P.L. 114-328 2017)\n2017财政年度国防授权法案(公法 114-328 2017)",color=white]
-	_10USC4401[label="10 U.S.C 4401\n美国法典将要求扩大到所有国防采办项目(2021年)",color=white];
+	National_Defense_Authorization_Act_for_Fiscal_Year_2017[label=")National Defense Authorization Act for Fiscal Year 2017(Pub.L. 114-328)\n10 U.S.C §2446a\n2017财政年度国防授权法案(公法 114-328)\n美国法典第10编2446条\n2016年12月23日通过(首次入法)",color=black,fillcolor=white]
+	_10USC4401[label="National Defense Authorization Act for Fiscal Year 2021(Pub.L. 116-283)\n10 U.S.C §4401\n2021财政年度国防授权法案(公法 114-328)\n美国法典4401条\n2021年1月1日"];
+	_10USC4402[label="10 U.S.C §4402\n美国法典4402条",color=black,fillcolor=white];
+	_10USC4403[label="10 U.S.C §4403\n美国法典4403条",color=black,fillcolor=white];
+	subgraph cluster_10USC4402{
+	label="10 U.S.C §4402主要内容(大致意思详见具体法条)"
+	style=dashed
+	_10USC4402_0[label="题目:Requirement to address modular open system approach in program capabilities development and acquisition weapon system design\n采办项目能力开发与武器系统设计中需体现模块化开放系统方法的要求"color=black,fillcolor=white]
+	_10USC4402_1[label="(a)Program capability document\n项目能力文件\n应说明系统生命周期性能需求可能变化的程度和初始作最低可接受作战能力",color=black,fillcolor=white]
+	_10USC4402_2[label="(b)Analysis of Alternatives\n备选方案分析\n包含对增量采办、原型开发及MOSA的考量",color=black,fillcolor=white]
+	_10USC4402_3[label="(c)Acquisition Strategy\n采办策略(详见法条)\n例如:清晰说明后续增量阶段的系统组件演进规律\n清晰说明支持MOSA所需的知识产权和相关问题(如技术数据交付物)",color=black,fillcolor=white]
+	_10USC4402_4[label="(d)Request for Proposals\n招标书\n确保包含对模块化开放系统方法的说明",color=black,fillcolor=white]
+	_10USC4402_5[label="(e)Milestone B\n里程碑B\n批准前对于采用MOSA的需确认:1.各层级间交互都纳入定义明确的接口,\n2.接口在里程碑决策前已存在，尽可能是广泛支持且基于共识的，\n3.政府做出安排，确保在系统平台开发完成后获取主要接口相关适当且必要知识产权。\n对于未采用MOSA需确认采用MOSA不具备可行性",color=black,fillcolor=white]
+	
+	_10USC4402_6[label="(f)Implementation Guidance\n实时指南\n各军种部长应发布指南，以落实各项要求",color=black,fillcolor=white]
+	
+}
+	_10USC4403_0[label="题目:Requirements relating to availability of major system interfaces and support for modular open system approach\n关于主要系统接口可用性及支持模块化开放系统方法的要求"color=black,fillcolor=white]
+	_10USC4402->_10USC4402_0[label="主要内容"]
+	_10USC4403->_10USC4403_0[label="主要内容"]
+	
+	{rank=same;National_Defense_Authorization_Act_for_Fiscal_Year_2017;_10USC4401}
+	subgraph cluster_10USC4401{
+	label="10 U.S.C §4401主要内容(大致意思详见具体法条)"
+	style=dashed
+	_10USC4401_0[label="题目:Requirement for modular open system approach in major defense acquisition programs; definitions\n重大国防采办项目中模块化开放系统方法的要求、定义"color=black,fillcolor=white]
+	_10USC4401_a[label="(a)2019年1月1日后获得里程碑A或B批准的主要国防采购计划（A major defense acquistion program）\n,应(shall)最大可行范围内采用MOSA设计和开发\n其他国防采购计划也应(shall also)最大可行范围内采用MOSA",color=black,fillcolor=white]
+	_10USC4401_b[label="(b)本款颁布一年内，国防部长应当公开用于合同的MOSA实施标准"color=black,fillcolor=white]
+}
+	_10USC4401->_10USC4401_a[label="\n主要内容",lhead = "cluster_10USC4401"]
 	Statutory_and_Regulatory_timeline[image="./images/statutory_and_regulatory_timeline.png"]
+	//Statutory_and_Regulatory_timeline[label="法律和政策时间线\n./images/statutory_and_regulatory_timeline.png",color=black,fillcolor=white]
 	National_Defense_Authorization_Act_for_Fiscal_Year_2017->_10USC4401[label="主要变更：1.法条编号调整2446a->4401\n2.适用范围拓展,重大国防采办->其他国防采办也最大范围采用\n3.术语定义细化"]
-	DFARS[label="Defense Federal Acquisition Regulation (DFARS) MOSA Policy\n《国防联邦采办条例》（DFARS）模块化开放系统方法（MOSA）政策",color=white]
-	DFARS1[label="Part 207.106",color=white]
-	DFARS2[label="Part 227.7203-2",color=white]
+	DFARS[label="Defense Federal Acquisition Regulation (DFARS) MOSA Policy\n《国防联邦采办条例》（DFARS）模块化开放系统方法（MOSA）政策",color=black,fillcolor=white]
+	DFARS1[label="Part 207.106",color=black,fillcolor=white]
+	DFARS2[label="Part 227.7203-2",color=black,fillcolor=white]
 	DFARS->DFARS1
 	DFARS->DFARS2
 }
-	_10USC4401->MOSA_[label="法律与政策",ltail="cluster_Statutory_and_Regulatory"]
+	_10USC4401->MOSA_[taillabel="法律与政策",ltail="cluster_Statutory_and_Regulatory"]
 	subgraph cluster_MOSAWGs{
 	label="相关机构"
 	style=dashed
-	MOSWG[color=white,label="Modular Open Systems Working Group (MOSWG)(now)\n模块化开放系统工作组(当前)"]
-	OSJTF[color=white,label="Open Systems Joint Task Force(OSJTF)(-2004)\n开放系统联合任务组(2004前)"]
-	TSWG[color=white,label="DoD MOSA Technical Standards Working Group (TSWG)\n国防部MOSA技术标准工作组(2016~?)"]
+	MOSWG[color=black,fillcolor=white,label="Modular Open Systems Working Group (MOSWG)(now)\n模块化开放系统工作组(当前)"]
+	OSJTF[color=black,fillcolor=white,label="Open Systems Joint Task Force(OSJTF)(-2004)\n开放系统联合任务组(2004前)"]
+	TSWG[color=black,fillcolor=white,label="DoD MOSA Technical Standards Working Group (TSWG)\n国防部MOSA技术标准工作组(2016~)"]
 	{rank=same;MOSWG;OSJTF;TSWG}
 subgraph cluster_tiger_team{
 	label=""
 	style = dashed;
-	Tiger1[color=white,label="Standards Tiger Team\n标准专项小组"]
-	Tiger2[color=white,label="Implementation Guidance Tiger Team\n实施指南专项小组"]
-	Tiger3[color=white,label="Requirements & Programming Functions Tiger Team\n需求与规划职能专项小组"]
-	Tiger4[color=white,label="MOSA Frameworks Tiger Team\nMOSA框架专项小组"]
+	Tiger1[color=black,fillcolor=white,label="Standards Tiger Team\n标准专项小组"]
+	Tiger2[color=black,fillcolor=white,label="Implementation Guidance Tiger Team\n实施指南专项小组"]
+	Tiger3[color=black,fillcolor=white,label="Requirements & Programming Functions Tiger Team\n需求与规划职能专项小组"]
+	Tiger4[color=black,fillcolor=white,label="MOSA Frameworks Tiger Team\nMOSA框架专项小组"]
 }
 	MOSWG->Tiger2[label="建立、领导",lhead="cluster_tiger_team"];
 	MOSWG->Tiger4[label="建立、领导(2018)"];
 	OSJTF->TSWG[style=dashed]
 	TSWG->MOSWG[style=dashed]
-	TSWG_role[color=white,label="1.明确了标准有效适当采用MOSA的作用和重要性\n2.查明国防部使用的常见标准，评估是否需要开发新标准\n3.与行业合作，挖掘行业侧实践，收集行业测痛点"]
-	TSWG->TSWG_role[label="工作"]
+	TSWG_role[color=black,fillcolor=white,label="1.明确了标准有效适当采用MOSA的作用和重要性\n2.查明国防部使用的常见标准，评估是否需要开发新标准\n3.与行业合作，挖掘行业侧实践，收集行业测痛点"]
+	TSWG->TSWG_role[label="主要工作"]
+	OSJTF_work[label="Program Manager’s Guide: A Modular Open Systems Approach (MOSA) To Acquisition(2004年9月)\n……",color=black,fillcolor=white]
+	OSJTF->OSJTF_work[label="主要工作"]
 	
+	MOSWG_work[label="Implementing a Modular Open Systems Approach in Department of Defense Programs(MOSA Implementation Guidebook)(2025年2月)\nModular Open Systems Approach (MOSA)Reference Frameworks in Defense Acquisition Programs(2020年5月)\n……",color=black,fillcolor=white]
+	MOSWG->MOSWG_work[label="主要工作"]
 }
 
 	USDRE->MOSWG[label="lead\n领导(副部长办公室OUSD R&E成立)"]
 	MOSWG->MOSA_[label="开展工作",ltail="cluster_MOSAWGs"];
 	
+	subgraph cluster_MOSA_related_framework{
+	label="";
+	style=dashed;
 	FACE[label="(Navy)Future Airborne Capability Environment(FACE)"]
 	OMS[label="(Air Force)Open Mission Systems(OMS)"]
 	UCI[label="(Air Force)Universal Command and Control Interface(UCI)"]
 	VICTORY[label="(Army)Vehicle Integration for C4ISR/EW Interoperability(VICTORY)"]
-	MOSA_->FACE
-	MOSA_->OMS
-	MOSA_->UCI
-	MOSA_->VICTORY
+}
+	MOSA_->FACE[label="各军种相关实践",lhead="cluster_MOSA_related_framework"]
 
 subgraph cluster_MOSA_ref_framework{
 	label="MOSA Reference Frameworks"
@@ -178,7 +212,8 @@ subgraph cluster_MOSA_ref_framework{
 }
 	MOSA_->MOSA_Ref_framework[label="参考架构(May 2020)"]
 subgraph cluster_MOSA_pillars{
-	label="MOSA Pillars\nMOSA的支柱"
+	label="MOSA Benefits\nMOSA优势\n来自Implementing a Modular Open Systems Approach in Department of Defense Programs(February 2025)"
+	label="MOSA Pillars\nMOSA的支柱\n更多信息见Implementing a Modular Open Systems Approach in Department of Defense Programs(February 2025) Appendix D"
 	style = dashed;
 	MOSA_Pillar1[label="Establish Enabling Environment\n建立有利环境"]
 	MOSA_Pillar5[label="Employ a Modular Design\n采用模块化设计"]
@@ -189,7 +224,10 @@ subgraph cluster_MOSA_pillars{
 	MOSA_->MOSA_Pillar1[label="pillar\n支柱",lhead="cluster_MOSA_pillars"]
 	MOSA_->MOSA[label="definition\n定义",style=dashed]
 subgraph cluster_MOSA_benefits{
-	label="MOSA Benefits\nMOSA优势\n来自Implementing a Modular Open Systems Approach in Department of Defense Programs(February 2025)"
+	label="MOSA benefits\nMOSA优势"
+	style = dashed;
+subgraph cluster_MOSA_benefits1{
+	label="来自Implementing a Modular Open Systems Approach in Department of Defense Programs(February 2025)"
 	style = dashed;
 	
 	subgraph cluster_MOSA_primary_benefits{
@@ -213,8 +251,27 @@ subgraph cluster_MOSA_benefits{
 	MOSA_Benefit12[label="commonality\n通用性"]
 	MOSA_Benefit13[label="security and cyber resilience\n安全性和网络韧性"]
 	}
+subgraph cluster_MOSA_benefits2{
+	label="来自10 U.S.C 4401"
+	style = dashed;
+	MOSA_Benefit14[label="enable incremental development\n实现增量开发"]
+	MOSA_Benefit15[label="enhance competition\n增强竞争"]
+	MOSA_Benefit16[label="enhance innovation\n增强创新"]
+	MOSA_Benefit17[label="enhance interoperability\n增强互操作"]
+}
+}
 }
 MOSA_ -> MOSA_Benefit1[label="benefit\n优势",lhead="cluster_MOSA_benefits"]
+_10USC4401->MOSA_Benefit14[label="目标",lhead="cluster_MOSA_benefits2"]
+subgraph cluster_MOSA_Assessment_Tools{
+	label="Assessment Tools\n评估工具"
+	style = dashed;
+	PART[label="Modular Open Systems Approach Program Assessment Tool(PART)\nArmy陆军"];
+	OAAT[label="Open Architecture Assessment Tool(OAAT)\nNavy海军"]
+	KOSS[label="Key Open Subsystem (KOSS) Tool\nNAVAIR海军航空系统司令部"]
+	SEAM[label="Air Force Systems Engineering Assessment Model (SEAM)\n空军"]
+}
+MOSA_->PART[label="评估工具",lhead="cluster_MOSA_Assessment_Tools"]
 	
 }
 soft_open_arch_what->USDRE[label="美国现状",lhead="cluster_soft_open_arch_Current_Situation_Abroad"]
