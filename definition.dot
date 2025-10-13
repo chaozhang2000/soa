@@ -8,9 +8,9 @@ openstandard[label = "3.open standards\n开放标准"];
 opensystem[label = "4.open system\n开放系统"];
 OpenSystemArch[label = "5.open system architecture(OSA)\n开放系统架构"];
 MOSA[label = "6.Modular Open Systems Approach(MOSA)\n模块化开放系统方法"];
-   arch-> openarch[label = "include\n包括",color=red,style=dashed];
-   arch-> OpenSystemArch[label = "include\n包括",color=red,style=dashed];
-   opensystem->OpenSystemArch[label = "feature\n特征",color=red,style=dashed];
+   arch-> openarch[label = "include\n包括",style=dashed];
+   arch-> OpenSystemArch[label = "include\n包括",style=dashed];
+   opensystem->OpenSystemArch[label = "feature\n特征",style=dashed];
 
 components[label = "components\n组件们"color=white];
 structure[label = "structure\n结构"color=white];
