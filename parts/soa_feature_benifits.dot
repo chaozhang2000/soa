@@ -35,6 +35,7 @@ subgraph cluster_FACE_benefits2{
 	FACE_Benefit4[label="reuse software across multiple platforms\n软件的多平台复用",color=black,fillcolor=white]
 	FACE_Benefit5[label="reduces redundant investment for the same capability\n减少相同能力重复投资",color=black,fillcolor=white]
 	FACE_Benefit6[label="Enables system of systems integration and interoperability\n增强体系集成与互操作",color=black,fillcolor=white]
+	{rank=same;FACE_Benefit1;FACE_Benefit2;FACE_Benefit6;FACE_Benefit0}
 	FACE_Benefit3->FACE_Benefit1
 	FACE_Benefit4->FACE_Benefit1
 	FACE_Benefit5->FACE_Benefit1
@@ -51,6 +52,7 @@ subgraph cluster_FACE_benefits2{
 	MOSA_Benefit11[label="Flexibility and adaptability\n灵活性和适应性"]
 	MOSA_Benefit12[label="commonality\n通用性"]
 	MOSA_Benefit13[label="security and cyber resilience\n安全性和网络韧性"]
+	
 	}
 }
 MOSA_Benefit5->MOSA_Benefit9[lhead = "cluster_MOSA_additional_benefits",ltail = "cluster_MOSA_benefits1"]
