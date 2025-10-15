@@ -6,4 +6,6 @@
 dot -Tpng ./parts/soa_feature_benifits.dot -o ./result/soa_feature_benifits.png
 #eog ./result/soft_open_arch1.png
 #eog ./result/DOD.png
-git add . && git commit -m "x" && git push origin main:main
+eog ./result/soa_feature_benifits.png
+#eog ./result/definition.png
+#git add . && git commit -m "x" && git push origin main:main

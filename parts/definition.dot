@@ -25,8 +25,8 @@ components->relationship[label = "1.'s\n的"];
 archdef4->archdef5[label = "1.'s\n的"];
 archdef4->archdef6[label = "1.'s\n的"];
 
-tech_arch[label = "technical architecture\n技术架构"color=white];
-system_structure[label = "system structure\n系统结构"color=white];
+tech_arch[label = "technical architecture\n技术架构"color=lightcoral];
+system_structure[label = "system structure\n系统结构"color=lightcoral];
 subgraph cluster_a{
 style = dashed;
 openarchdef4[label = "modular\n模块化"color=white];
@@ -44,7 +44,7 @@ system_structure->openarchdef6[label="2.4.5.6.feature\n特征"];
 system_structure->openarchdef7[label="2.4.5.feature\n特征"];
 system_structure->openarchdef8[label="2.feature\n特征"];
 
-standards[label="standards\n标准",color=white];
+standards[label="standards\n标准",color=lightcoral];
 openstandarddef2[label="widely accepted and supported\n广泛接受和支持",color=white];
 openstandarddef3[label="standards organizations\n标准组织",color=white];
 openstandarddef4[label="marketplace\n市场",color=white];
