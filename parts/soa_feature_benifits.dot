@@ -5,7 +5,7 @@ subgraph cluster_MOSA_benefits{
 	label="benefits\n优势"
 	style = dashed;
 subgraph cluster_MOSA_benefits1{
-	label="MOSA benifits\nMOSA的优势(采用开放系统的战略的收益)"
+	label="采用开放系统的方法/战略的收益)"
 	style = dashed;
 	
 	subgraph cluster_MOSA_primary_benefits{
@@ -18,12 +18,20 @@ subgraph cluster_MOSA_benefits1{
 	MOSA_Benefit5[label="Enables cost savings/cost avoidance/schedule reduction\n实现成本节约/成本规避/进度缩短"]
 	}
 subgraph cluster_MOSA_benefits2{
-	label="(来源10 U.S.C 4401)"
+	label="MOSA期望收益\n(来源10 U.S.C 4401)"
 	style = dashed;
 	MOSA_Benefit14[label="enable incremental development\n实现增量开发"]
 	MOSA_Benefit15[label="enhance competition\n增强竞争",color=black,fillcolor=white]
 	MOSA_Benefit16[label="enhance innovation\n增强创新",color=black,fillcolor=white]
 	MOSA_Benefit17[label="enhance interoperability\n增强互操作",color=black,fillcolor=white]
+}
+subgraph cluster_FACE_benefits2{
+	label="FACE方法收益\n(来源FACE官网)"
+	style = dashed;
+	FACE_Benefit0[label="enable incremental development\n实现增量开发"]
+	FACE_Benefit1[label="enhance competition\n增强竞争",color=black,fillcolor=white]
+	FACE_Benefit2[label="enhance innovation\n增强创新",color=black,fillcolor=white]
+	FACE_Benefit3[label="enhance interoperability\n增强互操作",color=black,fillcolor=white]
 }
 }
 	subgraph cluster_MOSA_additional_benefits{
@@ -40,4 +48,5 @@ subgraph cluster_MOSA_benefits2{
 	}
 }
 MOSA_Benefit5->MOSA_Benefit9[lhead = "cluster_MOSA_additional_benefits",ltail = "cluster_MOSA_benefits1"]
+MOSA_Benefit1->MOSA_Benefit14[style=invis]
 }
