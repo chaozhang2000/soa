@@ -21,9 +21,9 @@ subgraph cluster_MOSA_benefits2{
 	label="(来源10 U.S.C 4401)"
 	style = dashed;
 	MOSA_Benefit14[label="enable incremental development\n实现增量开发"]
-	MOSA_Benefit15[label="enhance competition\n增强竞争"]
-	MOSA_Benefit16[label="enhance innovation\n增强创新"]
-	MOSA_Benefit17[label="enhance interoperability\n增强互操作"]
+	MOSA_Benefit15[label="enhance competition\n增强竞争",color=black,fillcolor=white]
+	MOSA_Benefit16[label="enhance innovation\n增强创新",color=black,fillcolor=white]
+	MOSA_Benefit17[label="enhance interoperability\n增强互操作",color=black,fillcolor=white]
 }
 }
 	subgraph cluster_MOSA_additional_benefits{
