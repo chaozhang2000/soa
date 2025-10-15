@@ -9,7 +9,7 @@ subgraph cluster_MOSA_benefits1{
 	style = dashed;
 	
 	subgraph cluster_MOSA_primary_benefits{
-	label="MOSA primary benefits\nMOSA核心优势\n(来自MOSA Implementation Guidebook 2025)n"
+	label="MOSA primary benefits\nMOSA核心优势\n(来源MOSA Implementation Guidebook 2025)n"
 	style = dashed;
 	MOSA_Benefit1[label="Improves interoperability\n提升互操作性"]
 	MOSA_Benefit2[label="Enhances competition\n增强竞争"]
@@ -28,7 +28,7 @@ subgraph cluster_MOSA_benefits2{
 }
 }
 	subgraph cluster_MOSA_additional_benefits{
-	label="MOSA additional benefits\nMOSA额外收益(给系统带来的)\n(来自)"
+	label="MOSA additional benefits\nMOSA额外收益(给系统带来的)\n(来源MOSA Implementation Guidebook 2025)n"
 	style = dashed;
 	MOSA_Benefit6[label="plug-and-play capability\n即插即用能力"]
 	MOSA_Benefit7[label="interchangeability\n互换性"]
