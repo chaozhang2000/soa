@@ -26,12 +26,15 @@ subgraph cluster_MOSA_benefits2{
 	MOSA_Benefit17[label="enhance interoperability\n增强互操作",color=black,fillcolor=white]
 }
 subgraph cluster_FACE_benefits2{
-	label="FACE方法收益\n(来源FACE官网)"
+	label="FACE Approach收益\n(来源FACE官网)"
 	style = dashed;
-	FACE_Benefit0[label="enable incremental development\n实现增量开发"]
-	FACE_Benefit1[label="enhance competition\n增强竞争",color=black,fillcolor=white]
-	FACE_Benefit2[label="enhance innovation\n增强创新",color=black,fillcolor=white]
-	FACE_Benefit3[label="enhance interoperability\n增强互操作",color=black,fillcolor=white]
+	FACE_Benefit0[label="promoting effective competition\n推动有效竞争",color=black,fillcolor=white]
+	FACE_Benefit1[label="achieve affordability and control lifecycle costs\n成本可控，管理全生命周期成本",color=black,fillcolor=white]
+	FACE_Benefit2[label="Incentivizing productivity and innovation\n激励生产效能提升和技术创新",color=black,fillcolor=white]
+	FACE_Benefit3[label="Reducing software development times\n缩短软件开发周期",color=black,fillcolor=white]
+	FACE_Benefit4[label="reuse software across multiple platforms\n软件的多平台复用",color=black,fillcolor=white]
+	FACE_Benefit5[label="reduces redundant investment for the same capability\n减少相同能力重复投资",color=black,fillcolor=white]
+	FACE_Benefit6[label="Enables system of systems integration and interoperability\n增强体系集成与互操作",color=black,fillcolor=white]
 }
 }
 	subgraph cluster_MOSA_additional_benefits{
