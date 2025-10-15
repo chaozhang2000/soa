@@ -2,7 +2,7 @@ digraph G {
   graph [rankdir=LR,compound=true];
   node [shape=box, style="rounded,filled"];
 subgraph cluster_MOSA_benefits{
-	label="benefits\nMOSA优势"
+	label="benefits\n优势"
 	style = dashed;
 subgraph cluster_MOSA_benefits1{
 	label="MOSA benifits\nMOSA的优势(采用开放系统的战略的收益)"
