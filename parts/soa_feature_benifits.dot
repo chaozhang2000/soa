@@ -1,0 +1,44 @@
+digraph G {
+  graph [rankdir=LR,compound=true];
+  node [shape=box, style="rounded,filled"];
+	MOSA_[label="Modular open systems approachi(MOSA)\n模块化系统方法"]
+subgraph cluster_MOSA_benefits{
+	label="MOSA benefits\nMOSA优势"
+	style = dashed;
+subgraph cluster_MOSA_benefits1{
+	label="来自Implementing a Modular Open Systems Approach in Department of Defense Programs(February 2025)"
+	style = dashed;
+	
+	subgraph cluster_MOSA_primary_benefits{
+	label="MOSA primary benefits\nMOSA核心优势"
+	style = dashed;
+	MOSA_Benefit1[label="Improves interoperability\n提升互操作性"]
+	MOSA_Benefit2[label="Enhances competition\n增强竞争"]
+	MOSA_Benefit3[label="Facilitates technology refresh\n促进技术更新"]
+	MOSA_Benefit4[label="Incorporates innovation\n吸收创新成果"]
+	MOSA_Benefit5[label="Enables cost savings/cost avoidance/schedule reduction\n实现成本节约/成本规避/进度缩短"]
+	}
+	subgraph cluster_MOSA_additional_benefits{
+	label="MOSA additional benefits\nMOSA额外收益"
+	style = dashed;
+	MOSA_Benefit6[label="plug-and-play capability\n即插即用能力"]
+	MOSA_Benefit7[label="interchangeability\n互换性"]
+	MOSA_Benefit8[label="Reusability\n可重用性"]
+	MOSA_Benefit9[label="Scalability\n可扩展性"]
+	MOSA_Benefit10[label="Vendor independence\n供应商独立性"]
+	MOSA_Benefit11[label="Flexibility and adaptability\n灵活性和适应性"]
+	MOSA_Benefit12[label="commonality\n通用性"]
+	MOSA_Benefit13[label="security and cyber resilience\n安全性和网络韧性"]
+	}
+subgraph cluster_MOSA_benefits2{
+	label="来自10 U.S.C 4401"
+	style = dashed;
+	MOSA_Benefit14[label="enable incremental development\n实现增量开发"]
+	MOSA_Benefit15[label="enhance competition\n增强竞争"]
+	MOSA_Benefit16[label="enhance innovation\n增强创新"]
+	MOSA_Benefit17[label="enhance interoperability\n增强互操作"]
+}
+}
+}
+MOSA_ -> MOSA_Benefit1[label="benefit\n优势",lhead="cluster_MOSA_benefits"]
+}
