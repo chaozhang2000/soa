@@ -45,7 +45,7 @@ subgraph cluster_MOSA_system_benefits{
 	style = dashed;
 	label = "采用开放系统方法对所设计系统的收益"
 	subgraph cluster_MOSA_additional_benefits{
-	label="MOSA additional benefits\n(来源MOSA Implementation Guidebook 2025)n"
+	label="MOSA additional benefits\n(来源MOSA Implementation Guidebook 2025)"
 	style = dashed;
 	MOSA_Benefit6[label="plug-and-play capability\n即插即用能力"]
 	MOSA_Benefit7[label="interchangeability\n互换性"]
@@ -57,15 +57,16 @@ subgraph cluster_MOSA_system_benefits{
 	MOSA_Benefit13[label="security and cyber resilience\n安全性和网络韧性"]
 	}
 	subgraph cluster_MOSA_system_benefits1{
-	label="开放系统的系统结构特征\n(来源Open System 定义)n"
+	label="开放系统的系统结构特征\n(来源Open System 定义)"
 	style = dashed;
 	OpenSystem_feature1[label="loosely couply\n松耦合"];
 	OpenSystem_feature2[label="highly cohesive\n强内聚"];
 	OpenSystem_feature3[label="modular\n模块化"];
 	OpenSystem_feature4[label="选择性设计/接口公开"];
 	}
+	OpenSystem_feature2->MOSA_Benefit9[style=invis]
 }
 }
-MOSA_Benefit14->MOSA_Benefit9[lhead = "cluster_MOSA_system_benefits",ltail = "cluster_MOSA_benefits1"]
+MOSA_Benefit15->OpenSystem_feature2[lhead = "cluster_MOSA_system_benefits",ltail = "cluster_MOSA_benefits1"]
 MOSA_Benefit1->MOSA_Benefit14[style=invis]
 }
