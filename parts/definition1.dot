@@ -2,8 +2,8 @@ digraph G {
   graph [rankdir=LR,compound=true];
   node [shape=box, style="rounded,filled"];
   
-  subgraph cluster_MOSA_benefits{
-    label="系统"
+  subgraph cluster_system1{
+    label="开放系统"
     node1[label="组件"]
     node2[label="组件"] 
     node3[label="组件"]
@@ -26,6 +26,7 @@ digraph G {
 TA[label="开放架构(技术架构)"]
 TA->node1
 TA->invis_node
+TA->node4[lhead="cluster_system1"]
   
   // 示例：如何连接到隐藏节点
   // external_node -> invis_node
