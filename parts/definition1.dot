@@ -13,12 +13,11 @@ digraph G {
     invis_node [shape=point, width=0, height=0, label=""]
     
     // 重新连接节点，在node1和node2之间插入不可见节点
-    node1 -> invis_node [dir=none]  // dir=none 表示没有箭头
-    invis_node -> node2
-    
+    node1 -> node2
     node2 -> node3
     node3 -> node4
-    node4 -> node1
+    node4 -> invis_node [dir=none]  // dir=none 表示没有箭头node1
+    invis_node->node1
     
     {rank=same;node1;node4}
     {rank=same;node2;node3}
