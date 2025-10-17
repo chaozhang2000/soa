@@ -26,6 +26,14 @@ digraph G {
       {rank=same;node1;node4;invis_node1}
       {rank=same;node2;node3}
     }
+  TA1[label="开放架构(技术架构)"]
+  TA1->node1
+  TA1->invis_node1
+  TA1->node4[lhead="cluster_system1"]
+}
+  subgraph cluster2{
+    label=""
+    style=dash
     
     subgraph cluster_system2{
       label="开放系统2"
@@ -47,13 +55,9 @@ digraph G {
       {rank=same;node5;node8;invis_node2}
       {rank=same;node6;node7}
     }
+  TA2[label="开放架构(技术架构)"]
+  TA2->node5
+  TA2->invis_node2
+  TA2->node8[lhead="cluster_system2"]
   }
-  
-  TA[label="开放架构(技术架构)"]
-  TA->node1
-  TA->invis_node1
-  TA->node4[lhead="cluster_system1"]
-  TA->node5
-  TA->invis_node2
-  TA->node8[lhead="cluster_system2"]
 }
