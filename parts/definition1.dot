@@ -3,8 +3,8 @@ digraph G {
   node [shape=box, style="rounded,filled"];
   
   subgraph cluster1{
-    label=""
-    style=dash
+    label="";
+	style = dashed;
     
     subgraph cluster_system1{
       label="开放系统1"
@@ -32,8 +32,8 @@ digraph G {
   TA1->node4[lhead="cluster_system1"]
 }
   subgraph cluster2{
-    label=""
-    style=dashed
+    label="";
+	style = dashed;
     
     subgraph cluster_system2{
       label="开放系统2"
