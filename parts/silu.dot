@@ -1,0 +1,65 @@
+digraph G {
+  graph [rankdir=LR,compound=true];
+  node [shape=box, style="rounded,filled"];
+
+//国外情况
+SOA_Background_Abord[label="国外发展情况"]
+guoneifazhan[label="国内发展情况",color=yellow]
+SOA_Background_Abord1[label="国外组织形式",color=yellow]
+{rank=same;SOA_Background_Abord;SOA_benifits}
+guowaianli[label="国外实践\nFACE等",color=yellow]
+guowaichengguo[label="国外成果"]
+//guowaitiaojian[label="国外发展条件(环境)"]
+guowaimudi[label="国外目的",color=green]
+guowailishi[label="国外发展历史",color=yellow]
+SOA_Background_Abord->SOA_Background_Abord1
+SOA_Background_Abord->guowaianli
+SOA_Background_Abord->guowaichengguo
+SOA_Background_Abord->guowailishi
+
+SOA[label="软件开放式架构学习"]
+What[label="1是什么"]
+Why[label="2为什么做"]
+CAN_or_Not[label="3能不能做"]
+HOW[label="4怎么做"]
+
+SOA->What
+SOA->Why
+SOA->CAN_or_Not
+SOA->HOW
+
+
+//What
+SOA_definition[label="开放式软件架构定义",color=green]
+What->SOA_definition[label="深度剖析定义，初步了解"]
+What->guowaianli[label="从案例中深入理解内涵"]
+
+//Why
+SOA_benifits[label="优势和好处",color=green];
+Our_requestment[label="我们的需求"];
+Other_methods[label="其他可能替代方案"]
+{rank=same;SOA_benifits;guowaimudi}
+SOA_benifits->guowaimudi[dir=none;style=dashed]
+Why->guowaimudi[label="美国人为了解决什么所以做"]
+Why->Our_requestment[label="我们要解决什么所以要做"]
+Why->Other_methods[label="是不是必须这么做"]
+Why->SOA_benifits[label="做了有什么好处"]
+
+
+
+//CAN
+guoneitiaojian[label="国内条件/环境",color=yellow]
+jizai[label="机载公司\n在行业的位置、业务定位等"]
+
+CAN_or_Not ->guowaianli[label="方法是否理论可行，实践结果如何"]
+CAN_or_Not ->guowaichengguo[label="成果值不值得做"]
+CAN_or_Not->Our_requestment[label="能否解决我们的需求"]
+CAN_or_Not->guoneitiaojian[label="国内条件/环境是否适合"]
+CAN_or_Not->jizai[label="作为机载能不能做,能做什么"]
+
+//HOW
+HOW->SOA_Background_Abord[label="分析借鉴组织形式、具体实践、分析发展历史"]
+HOW->guoneitiaojian[label="符合国内环境"]
+HOW->jizai[label="明确自身定位"]
+HOW->guoneifazhan[label="分析借鉴"]
+}
