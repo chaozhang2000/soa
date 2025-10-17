@@ -19,7 +19,7 @@ digraph G {
     node4 -> invis_node [dir=none]  // dir=none 表示没有箭头node1
     invis_node->node1
     
-    {rank=same;node1;node4}
+    {rank=same;node1;node4;invis_node}
     {rank=same;node2;node3}
   }
 TA[label="开放架构(技术架构)"]
