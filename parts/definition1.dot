@@ -2,50 +2,58 @@ digraph G {
   graph [rankdir=LR,compound=true];
   node [shape=box, style="rounded,filled"];
   
-  subgraph cluster_system1{
-    label="开放系统"
-    node1[label="组件"]
-    node2[label="组件"] 
-    node3[label="组件"]
-    node4[label="组件"]
+  subgraph cluster1{
+    label=""
+    style=dash
     
-    // 创建不可见节点
-    invis_node [shape=point, width=0, height=0, label=""]
+    subgraph cluster_system1{
+      label="开放系统1"
+      node1[label="组件"]
+      node2[label="组件"] 
+      node3[label="组件"]
+      node4[label="组件"]
+      
+      // 创建不可见节点
+      invis_node1 [shape=point, width=0, height=0, label=""]
+      
+      // 重新连接节点，在node1和node2之间插入不可见节点
+      node1 -> node2
+      node2 -> node3
+      node3 -> node4
+      node4 -> invis_node1 [dir=none]  // dir=none 表示没有箭头
+      invis_node1 -> node1
+      
+      {rank=same;node1;node4;invis_node1}
+      {rank=same;node2;node3}
+    }
     
-    // 重新连接节点，在node1和node2之间插入不可见节点
-    node1 -> node2
-    node2 -> node3
-    node3 -> node4
-    node4 -> invis_node [dir=none]  // dir=none 表示没有箭头node1
-    invis_node->node1
-    
-    {rank=same;node1;node4;invis_node}
-    {rank=same;node2;node3}
+    subgraph cluster_system2{
+      label="开放系统2"
+      node5[label="组件"]
+      node6[label="组件"] 
+      node7[label="组件"]
+      node8[label="组件"]
+      
+      // 创建不可见节点
+      invis_node2 [shape=point, width=0, height=0, label=""]
+      
+      // 重新连接节点，在node5和node6之间插入不可见节点
+      node5 -> node6
+      node6 -> node7
+      node7 -> node8
+      node8 -> invis_node2 [dir=none]  // dir=none 表示没有箭头
+      invis_node2 -> node5
+      
+      {rank=same;node5;node8;invis_node2}
+      {rank=same;node6;node7}
+    }
   }
-TA[label="开放架构(技术架构)"]
-TA->node1
-TA->invis_node
-TA->node4[lhead="cluster_system1"]
   
-  // 示例：如何连接到隐藏节点
-  // external_node -> invis_node
+  TA[label="开放架构(技术架构)"]
+  TA->node1
+  TA->invis_node1
+  TA->node4[lhead="cluster_system1"]
+  TA->node5
+  TA->invis_node2
+  TA->node8[lhead="cluster_system2"]
 }
-/*
-digraph G {
-  graph [rankdir=LR,compound=true];
-  node [shape=box, style="rounded,filled"];
-subgraph cluster_MOSA_benefits{
-	label="系统"
-	node1[label="组件"]
-	node2[label="组件"]
-	node3[label="组件"]
-	node4[label="组件"]
-	node1 -> node2
-	node2->node3
-	node3 ->node4
-	node4 -> node1
-	{rank=same;node1;node4}
-	{rank=same;node2;node3}
-}
-TA[label="开放架构(技术架构)"]
-}*/
