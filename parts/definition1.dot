@@ -33,7 +33,7 @@ digraph G {
 }
   subgraph cluster2{
     label=""
-    style=dash
+    style=dashed
     
     subgraph cluster_system2{
       label="开放系统2"
