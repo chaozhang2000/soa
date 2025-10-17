@@ -27,9 +27,9 @@ digraph G {
       {rank=same;node2;node3}
     }
   TA1[label="开放架构(技术架构)"]
-  TA1->node1
-  TA1->invis_node1
-  TA1->node4[lhead="cluster_system1"]
+  TA1->node1[label="模块化、高内聚"]
+  TA1->invis_node1[label="松耦合"]
+  TA1->node4[label="管理组件结构和关系、\n设计和演化的准则",lhead="cluster_system1"]
 }
   subgraph cluster2{
     label="";
