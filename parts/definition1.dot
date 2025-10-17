@@ -7,7 +7,6 @@ digraph G {
 	style = dashed;
     
     subgraph cluster_system1{
-layout=neato
       label="开放系统1"
       node1[label="组件"]
       node2[label="组件"] 
@@ -37,7 +36,6 @@ layout=neato
 	style = dashed;
     
     subgraph cluster_system2{
-layout=neato
       label="开放系统2"
       node5[label="组件"]
       node6[label="组件"] 
