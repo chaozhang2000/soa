@@ -7,10 +7,10 @@ SOA_Background_Abord[label="国外发展情况"]
 guoneifazhan[label="国内发展情况",color=yellow]
 SOA_Background_Abord1[label="国外组织形式",color=yellow]
 {rank=same;SOA_Background_Abord;SOA_benifits}
-guowaianli[label="国外实践\nFACE等",color=yellow]
+guowaianli[label="国外具体实践\nFACE等",color=yellow]
 guowaichengguo[label="国外成果"]
 //guowaitiaojian[label="国外发展条件(环境)"]
-guowaimudi[label="国外目的",color=green]
+guowaimudi[label="国外目的",color=yellow]
 guowailishi[label="国外发展历史",color=yellow]
 SOA_Background_Abord->SOA_Background_Abord1
 SOA_Background_Abord->guowaianli
@@ -22,6 +22,8 @@ What[label="1是什么"]
 Why[label="2为什么做"]
 CAN_or_Not[label="3能不能做"]
 HOW[label="4怎么做"]
+{rank=same;What;Why;CAN_or_Not;HOW}
+What->Why->CAN_or_Not->HOW[style=invis]
 
 SOA->What
 SOA->Why
@@ -30,16 +32,19 @@ SOA->HOW
 
 
 //What
-SOA_definition[label="开放式软件架构定义",color=green]
+SOA_definition[label="软件开放式架构定义",color=green]
 What->SOA_definition[label="深度剖析定义，初步了解"]
 What->guowaianli[label="从案例中深入理解内涵"]
 
 //Why
-SOA_benifits[label="优势和好处",color=green];
+SOA_benifits[label="优势和好处"];
+lilunyoushi[label="理论优势",color=green]
 Our_requestment[label="我们的需求"];
 Other_methods[label="其他可能替代方案"]
 {rank=same;SOA_benifits;guowaimudi}
 SOA_benifits->guowaimudi[dir=none;style=dashed]
+SOA_benifits->guowaichengguo[label="实践收益"]
+SOA_benifits->lilunyoushi[label="理论分析的收益"]
 Why->guowaimudi[label="美国人为了解决什么所以做"]
 Why->Our_requestment[label="我们要解决什么所以要做"]
 Why->Other_methods[label="是不是必须这么做"]
