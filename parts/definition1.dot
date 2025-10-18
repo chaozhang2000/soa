@@ -7,11 +7,13 @@ subgraph cluster_MOSA{
 	subgraph cluster_MOSAduyou{
 	label=""
 	style=dashed;
-	shishizhidao[label="实施指南\n"]
-	cankaokuangjia[label="参考框架\n"]
-	shejiliucheng[label="设计流程要求\n"]
-	fuhexingyanzheng[label="符合性验证\n"]
-	shenluehao[label="……\n"]
+	cankaojiagou[label="参考架构"]
+	standards[label="标准"]
+	shishizhinan[label="实施指南"]
+	fuhexingyanzheng[label="符合性证明"]
+	shujumoxing[label="数据模型"]
+	tool[label="工具"]
+	shenglue[label="……"]
 }
   subgraph cluster1{
     label="";
@@ -76,6 +78,6 @@ subgraph cluster_MOSA{
   TA2->invis_node_system2[lhead="cluster_system2"]
   }
 }
-	shejiliucheng->TA2[lhead="cluster2",ltail="cluster_MOSAduyou"]
-	shejiliucheng->TA1[lhead="cluster1",ltail="cluster_MOSAduyou"]
+	fuhexingyanzheng->TA2[lhead="cluster2",ltail="cluster_MOSAduyou"]
+	fuhexingyanzheng->TA1[lhead="cluster1",ltail="cluster_MOSAduyou"]
 }
