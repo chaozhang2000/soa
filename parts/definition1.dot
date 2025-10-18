@@ -1,20 +1,33 @@
 digraph G {
   graph [rankdir=LR,compound=true];
   node [shape=box, style="rounded,filled"];
-  
+
+subgraph cluster_MOSA{
+  label="开放系统方法例如(MOSA)"
+	subgraph cluster_MOSAduyou{
+	label=""
+	style=dashed;
+	shishizhidao[label="实施指南\n"]
+	cankaokuangjia[label="参考框架\n"]
+	shejiliucheng[label="设计流程要求\n"]
+	fuhexingyanzheng[label="符合性验证\n"]
+	shenluehao[label="……\n"]
+}
   subgraph cluster1{
     label="";
 	style = dashed;
     
     subgraph cluster_system1{
       label="开放系统1"
-      node1[label="组件"]
-      node2[label="组件"] 
-      node3[label="组件"]
-      node4[label="组件"]
+	style=solid
+      node1[label="组件1"]
+      node2[label="组件2"] 
+      node3[label="组件3"]
+      node4[label="组件4"]
       
       // 创建不可见节点
       invis_node1 [shape=point, width=0, height=0, label=""]
+      invis_node_system1 [shape=point, width=0, height=0, label=""]
       
       // 重新连接节点，在node1和node2之间插入不可见节点
       node1 -> node2
@@ -24,12 +37,12 @@ digraph G {
       invis_node1 -> node1
       
       {rank=same;node1;node4;invis_node1}
-      {rank=same;node2;node3}
+      {rank=same;node2;node3;invis_node_system1}
     }
   TA1[label="开放架构(技术架构)"]
-  TA1->node1[label="模块化、高内聚"]
+  TA1->node4[label="模块化、高内聚"]
   TA1->invis_node1[label="松耦合"]
-  TA1->node4[label="管理组件结构和关系、\n设计和演化的准则",lhead="cluster_system1"]
+  TA1->invis_node_system1[labeldistance=5,labelangle=15,taillabel="管理组件结构和关系、\n设计和演化的准则",lhead="cluster_system1"]
 }
   subgraph cluster2{
     label="";
@@ -37,6 +50,7 @@ digraph G {
     
     subgraph cluster_system2{
       label="开放系统2"
+	style=solid
       node5[label="组件"]
       node6[label="组件"] 
       node7[label="组件"]
@@ -44,6 +58,7 @@ digraph G {
       
       // 创建不可见节点
       invis_node2 [shape=point, width=0, height=0, label=""]
+      invis_node_system2 [shape=point, width=0, height=0, label=""]
       
       // 重新连接节点，在node5和node6之间插入不可见节点
       node5 -> node6
@@ -53,11 +68,14 @@ digraph G {
       invis_node2 -> node5
       
       {rank=same;node5;node8;invis_node2}
-      {rank=same;node6;node7}
+      {rank=same;node6;node7;invis_node_system2}
     }
   TA2[label="开放架构(技术架构)"]
-  TA2->node5
+  TA2->node8
   TA2->invis_node2
-  TA2->node8[lhead="cluster_system2"]
+  TA2->invis_node_system2[lhead="cluster_system2"]
   }
+}
+	shejiliucheng->TA2[lhead="cluster2",ltail="cluster_MOSAduyou"]
+	shejiliucheng->TA1[lhead="cluster1",ltail="cluster_MOSAduyou"]
 }
